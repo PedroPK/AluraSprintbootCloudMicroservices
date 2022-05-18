@@ -1,13 +1,19 @@
 package microloja.models.dto;
 
-import lombok.Getter;
-import lombok.Setter;
 import lombok.ToString;
 
-@Getter
-@Setter
+//@Getter
+//@Setter
 @ToString
 public class InfoFornecedorDTO {
 	
-	private String endereçco;
+	private String endereco;
+	
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
 }
