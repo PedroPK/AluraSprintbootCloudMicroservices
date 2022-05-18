@@ -1,15 +1,20 @@
 package microloja.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import microloja.models.dto.CompraDTO;
+import microloja.service.CompraService;
 
 @RestController
 @RequestMapping("/compra")
 public class CompraController {
+	
+	@Autowired
+	private CompraService compraService;
 	
 	/**
 	 * To test this Endpoint:
@@ -41,7 +46,9 @@ public class CompraController {
 	 */
 	@RequestMapping(method = RequestMethod.POST)
 	public void realizarCompra(@RequestBody CompraDTO pCompra) {
-		System.out.println(pCompra.toString());
+		this.compraService.realizarCompra(pCompra);
+		
+		//System.out.println(pCompra.toString());
 	}
 	
 }

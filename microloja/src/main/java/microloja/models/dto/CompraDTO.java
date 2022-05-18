@@ -9,15 +9,15 @@ import lombok.Setter;
 @Setter
 public class CompraDTO {
 	
-	private List<ItemDaCompraDTO>	aItens;
+	private List<ItemDaCompraDTO>	itens;
 	
 	private EnderecoDTO				endereco;
 	
 	public String toString() {
 		String result = "CompraDTO:" + "\n";
 		
-		if ( this.aItens != null && !this.aItens.isEmpty() ) {
-			for (ItemDaCompraDTO item: aItens) {
+		if ( this.itens != null && !this.itens.isEmpty() ) {
+			for (ItemDaCompraDTO item: itens) {
 				result = result + item.toString() + "\n";
 			}
 		}
